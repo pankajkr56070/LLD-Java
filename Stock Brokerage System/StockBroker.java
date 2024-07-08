@@ -42,7 +42,8 @@ public class StockBroker {
 
     public void createAccount(User user, double initialBalance) {
         String accountId = generateAccountId();
-        Account account = new Account(accountId, user, initialBalance);
+        Portfolio portfolio = new PortfolioImpl();
+        Account account = new AccountImpl(accountId, user, initialBalance, portfolio);
         accounts.put(accountId, account);
     }
 

@@ -1,13 +1,15 @@
 public class SellOrder extends Order {
+
     /**
      * @param orderId
      * @param account
      * @param stock
      * @param quantity
      * @param price
+     * @param validator
      */
-    public SellOrder(String orderId, Account account, Stock stock, int quantity, double price) {
-        super(orderId, account, stock, quantity, price);
+    public SellOrder(String orderId, Account account, Stock stock, int quantity, double price, OrderValidator validator, OrderExecutionStrategy strategy) {
+        super(orderId, account, stock, quantity, price, validator, strategy);
     }
 
     @Override
@@ -17,19 +19,9 @@ public class SellOrder extends Order {
     // orders.
     public void execute() {
         // Check if the user has sufficient quantity of the stock to sell
-        synchronized (account) {
-            Portfolio portfolio = account.getPortfolio();
-            if (portfolio.getHoldings().getOrDefault(stock.getSymbol(), 0) >= quantity) {
-                portfolio.removeStock(stock, quantity);
-                // Update portfolio and perform necessary actions
-                double totalProceeds = quantity * price;
-                account.deposit(totalProceeds);
-                status = OrderStatus.EXECUTED;
-            } else {
-                status = OrderStatus.REJECTED;
-                throw new InsufficientStockException("Insufficient stock quantity to execute the sell order.");
-            }
-        }
+        strategy.execute();
 
     }
 }
+
+
