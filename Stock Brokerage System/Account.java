@@ -15,7 +15,8 @@ public class Account {
         balance += amount;
         System.out.println("Account balance is now " + balance);
     }
-
+    
+    //Atomic operation
     public synchronized void withdraw(double amount) {
         if (balance >= amount) {
             balance -= amount;

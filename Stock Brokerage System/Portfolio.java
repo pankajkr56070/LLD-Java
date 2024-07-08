@@ -14,7 +14,7 @@ public class Portfolio {
         holdings.put(stock.getSymbol(), holdings.getOrDefault(stock.getSymbol(), 0) + quantity);
     }
 
-    public synchronized void removeStock(Stock stock, int quantity) {
+    public synchronized void removeStock(Stock stock, int quantity){
         String symbol = stock.getSymbol();
         if (holdings.containsKey(symbol)) {
             int currentQuantity = holdings.get(symbol);
