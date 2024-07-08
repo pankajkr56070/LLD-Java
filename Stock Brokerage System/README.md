@@ -19,13 +19,14 @@ Here are some detailed feedback points on different aspects of your code:
     >Custom exceptions (InsufficientFundsException and InsufficientStockException) provide clear error messages.
 
 
-**Improvements**:
-Error Handling in SellOrder:
+**Improvements**
 
-Currently, the SellOrder doesn't check if the user has sufficient stock before selling. This should be handled similarly to how BuyOrder checks for sufficient funds.
-Order Execution and Portfolio Management:
+1. Error Handling in SellOrder:
 
-When executing a BuyOrder, the portfolio should be updated to reflect the purchase. Similarly, for a SellOrder, the portfolio should be updated to reflect the sale.
+    Currently, the SellOrder doesn't check if the user has sufficient stock before selling. This should be handled similarly to how BuyOrder checks for sufficient funds.
+
+2. Order Execution and Portfolio Management:
+   When executing a BuyOrder, the portfolio should be updated to reflect the purchase. Similarly, for a SellOrder, the portfolio should be updated to reflect the sale.
 
 
 **Updates done**
