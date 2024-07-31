@@ -8,10 +8,9 @@ d) If there is snake encountered, the player will go down. If there is ladder en
 
 Entities : 
 
-a) Board (n * m)
-    1. Cells - It can be normal cell, or special cell - snake or ladder
+a) Board of given size
 b) Player
-    1. id 
+    1. name 
     2. currentPosition
 c) Dice
     1. currentValue
@@ -39,3 +38,15 @@ SOLID Principles Review :
 
 5.	Dependency Inversion Principle (DIP)
 	• Review: High-level modules depend on low-level modules directly. Introducing abstractions, such as interfaces for Dice, Board, Player, etc., can improve the design by following DIP.
+
+
+Design Patterns Feedback
+
+	1.	Factory Pattern
+	•	Feedback: A factory pattern can be used to create instances of Snake, Ladder, and Player. This can encapsulate the instantiation logic and provide a single point of control for object creation.
+	2.	Strategy Pattern
+	•	Feedback: The dice rolling logic could use a strategy pattern to allow different dice rolling strategies without changing the Dice class.
+	3.	Observer Pattern
+	•	Feedback: Implementing an observer pattern can help notify players or other components of game events, such as when a player moves, a snake bite occurs, or a ladder is climbed.
+	4.	Builder Pattern
+	•	Feedback: The SnakeAndLadderService constructor has multiple parameters, which could be simplified using a builder pattern for easier and more readable object construction

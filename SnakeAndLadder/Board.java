@@ -1,17 +1,22 @@
 package SnakeAndLadder;
 
 public class Board {
-    private int SIZE;
-    private int start;
-    private int end;
+    private static Board instance;
+    private final int size;
 
     public Board(int size) {
-        this.SIZE = size;
-        this.start = 1;
-        this.end = start + size - 1;
+        this.size = size;
+
+    }
+
+    public static synchronized Board getInstance(int size) {
+        if(instance == null) {
+            instance = new Board(size);
+        }
+        return instance;
     }
 
     public int getSize() {
-        return SIZE;
+        return size;
     }
 }

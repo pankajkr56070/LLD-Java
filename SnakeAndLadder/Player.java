@@ -1,13 +1,12 @@
 package SnakeAndLadder;
 
 public class Player {
-    private String name;
+    private final String name;
+    private int currentPosition;
 
     public String getName() {
         return name;
     }
-
-    private int currentPosition;
 
     public void setCurrentPosition(int currentPosition) {
         this.currentPosition = currentPosition;
@@ -19,6 +18,6 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.currentPosition = 1;
+        this.currentPosition = 0;
     }
 }
