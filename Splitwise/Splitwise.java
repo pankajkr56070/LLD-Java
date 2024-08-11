@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Splitwise {
     private static Splitwise instance;
-    private final Map<String, User> users;
+    private final Map<String, IUser> users;
     private final Map<String, Group> groups;
 
     private static final String TRANSACTION_ID_PREFIX = "TXN";
@@ -25,7 +25,7 @@ public class Splitwise {
     }
 
 
-    public void addUser(User user) {
+    public void addUser(IUser user) {
         users.put(user.getId(), user);
        
     }

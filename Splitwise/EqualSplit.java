@@ -1,7 +1,7 @@
 package Splitwise;
 
 public class EqualSplit extends Split {
-    public EqualSplit(User user) {
+    public EqualSplit(IUser user) {
         super(user);
     }
 

@@ -1,10 +1,10 @@
 package Splitwise;
 
-public abstract class Split {
-    protected User user;
+public abstract class Split implements ISplit{
+    protected IUser user;
     protected double amount;
 
-    public Split(User user) {
+    public Split(IUser user) {
         this.user = user;
     }
 
@@ -14,7 +14,7 @@ public abstract class Split {
         this.amount = amount;
     }
 
-    public User getUser() {
+    public IUser getUser() {
         return user;
     }
 }

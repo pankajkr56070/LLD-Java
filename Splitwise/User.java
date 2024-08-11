@@ -3,7 +3,7 @@ package Splitwise;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class User {
+public class User implements IUser {
     private final String id;
     private final String name;
     private final String email;
@@ -25,8 +25,11 @@ public class User {
     }
 
     public String getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+       return id;
+    }
+
+    public void updateBalance(String userId, double amount) {
+        balances.put(userId, balances.getOrDefault(userId, 0.0) + amount);
     }
 
 }

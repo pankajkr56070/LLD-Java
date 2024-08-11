@@ -3,7 +3,7 @@ package Splitwise;
 public class PercentageSplit extends Split {
     private final double percent;
 
-    public PercentageSplit(User user, double percent) {
+    public PercentageSplit(IUser user, double percent) {
         super(user);
         this.percent = percent;
     }
